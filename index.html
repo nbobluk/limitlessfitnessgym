@@ -7,21 +7,22 @@
 <meta name="author" content="Nikolas Bobluk">
 <meta name="description" content="Limitless Fitness is a state-of-the-art gym where all ages and skill levels can achieve their fitness goals, connect with a trainer, take one of our many fitness classes, and much more.">
 <meta name="robots" content="index, follow">
-<link rel="stylesheet" href="styles.css">
+
 <title>Limitless Fitness</title>
 
 <meta property="og:title" content="Limitless Fitness">
 <meta property="og:type" content="website">
-<meta property="og:image" content="">
-<meta property="og:url" content="">
+<meta property="og:image" content="images/facility.jpg">
+<meta property="og:url" content="http://www.limitlessfitness.com">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@LimitlessFitness">
 <meta name="twitter:creator" content="@LimitlessFitness">
 <meta name="twitter:title" content="Limitless Fitness">
 <meta name="twitter:description" content="Unleash your strength and join a fitness community dedicated to your transformation.">
-<meta name="twitter:image" content="">
-</head>
+<meta name="twitter:image" content="images/facility.jpg">
+
+
 
 </head>
 <body>
@@ -44,7 +45,13 @@
 <!-- add alt text where necessary -->
 <!-- add responsive images for resolution switching -->
     
-      src="images/facility.jpg"
+<picture>
+  <source media="(min-width:320px)" srcset="images/facility-320w.jpg">
+  <source media="(min-width:768px)" srcset="images/facility-768w.jpg">
+  <img src="images/facility.jpg" alt="Gym with treadmills lined up against a window and other workout equipment.">
+</picture>
+
+
 
   </header>
   <nav>
@@ -84,7 +91,14 @@
       </ul>
 <!-- add alt text where necessary -->
 <!-- add responsive images for resolution switching -->
-        src="images/classes.jpg"
+      <figure>
+        <picture>
+          <source media="(min-width:768px)" srcset="images/classes-768w.jpg">
+          <source media="(min-width:320px)" srcset="images/classes-320w.jpg">
+          <img src="images/classes.jpg" alt="Group HIIT fitness class in action.">
+        </picture>
+        <figcaption>HIIT & Cardio</figcaption>
+      </figure>
 
     </section>
     <section>
@@ -96,7 +110,14 @@
       <a href="#">Book a Free Consultation today!</a>
 <!-- add alt text where necessary -->
 <!-- add responsive images for resolution switching -->
-        src="images/dumbells.jpg"
+      <figure>
+        <picture>
+          <source media="(min-width:768px)" srcset="images/dumbells-768w.jpg">
+          <source media="(min-width:320px)" srcset="images/dumbells-320w.jpg">
+          <img src="images/dumbells.jpg" alt="Dumbbells lined up on the floor of the gym.">
+        </picture>
+        <figcaption class="black">Strength Training</figcaption>
+      </figure>
 
     </section>
     <section>
@@ -110,17 +131,32 @@
       <section id="membership-form">
         <h3>Join Limitless Fitness Today!</h3>
         <p>Fill out the form below to kickstart your fitness journey:</p>
-<!--add accessibility to the form-->
-        Full Name
-        Email Address
-        Phone Number
-        Membership Type
-          Select a Membership Option
-          Monthly Membership
-          Annual Membership
-          Family & Group Plans
-        Tell us about your fitness goals:
-        Submit
+
+        <!--add accessibility to the form-->
+
+      <form method="post" action="https://wp.zybooks.com/form-viewer.php">
+
+        <label for="full-name">Full Name*</label>
+        <input type="text" id="full-name" name="full-name" required>
+        <label for="email">Email Address*</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="555-555-5555">
+        <label for="membership">Membership Type*</label>
+        <select id="membership" name="membership" required>
+          <option value="">Select a Membership Option</option>
+          <option value="monthly">Monthly Membership</option>
+          <option value="annual">Annual Membership</option>
+          <option value="group">Family & Group Plans</option>
+        </select>
+
+        <label for="goals">Tell us about your fitness goals:</label>
+        <textarea id="goals" name="goals"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+
+
+
       </section>
     </section>
   </main>
